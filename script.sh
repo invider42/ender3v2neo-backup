@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 #test5 comment to test moonraker
-# Set parent directory path
-
+# Check for updates
 [ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref @{u} | \
-sed 's/\// /g') | cut -f1) ] && echo up to date || echo not up to date
+sed 's/\// /g') | cut -f1) ] && echo -e "Klipper-backup is up to date\n" || echo -e "Klipper-backup is $(tput setaf 1)not$(tput sgr0) up to date, consider making a $(tput setaf 1)git pull$(tput sgr0) to update\n"
 
+# Set parent directory path
 parent_path=$(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd -P)
 
 # Initialize variables from .env file
