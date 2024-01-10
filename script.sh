@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#test2 comment to test moonraker
+#test3 comment to test moonraker
 # Set parent directory path
 parent_path=$(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd -P)
 
