@@ -1,16 +1,9 @@
 #!/usr/bin/env bash
-#test3 comment to test moonraker
+#test4 comment to test moonraker
 # Set parent directory path
 
-current_branch=$(git rev-parse --abbrev-ref HEAD)
-git fetch
-git_status=$(git status -uno)
-
-if [ -z "$git_status" ]; then
-    echo "up-to-date '$current_branch'."
-else
-    echo "local branch '$current_branch' and remote branch are different, there is a new update"
-fi
+[ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref @{u} | \
+sed 's/\// /g') | cut -f1) ] && echo up to date || echo not up to date
 
 parent_path=$(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd -P)
 
