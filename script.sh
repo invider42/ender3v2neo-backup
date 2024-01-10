@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#test4 comment to test moonraker
+#test5 comment to test moonraker
 # Set parent directory path
 
 [ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref @{u} | \
