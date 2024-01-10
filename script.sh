@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#test comment to test moonraker
 # Set parent directory path
 parent_path=$(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd -P)
 
@@ -50,6 +50,7 @@ if [ ! -d ".git" ]; then
   git init
 fi
 git config init.defaultBranch main #supress git warning about branch name changes coming soon
+git branch -M main
 [[ "$commit_username" != "" ]] && git config user.name "$commit_username" || git config user.name "$(whoami)"
 [[ "$commit_email" != "" ]] && git config user.email "$commit_email" || git config user.email "$(whoami)@$(hostname --long)"
 git add .
